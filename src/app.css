@@ -1,33 +1,55 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 .content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  min-height: 100vh;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	min-height: 100vh;
 }
 
 .editor {
-  border-right: 1px solid #c2c2c2;
+	border-right: 1px solid #c2c2c2;
 }
 
 .editor textarea {
-  width: 100%;
-  height: 100%;
-  resize: none;
-  border: none;
-  outline: none;
-  font-size: 1.125em;
+	width: 100%;
+	height: 100%;
+	resize: none;
+	border: none;
+	outline: none;
+	font-size: 95%;
+	line-height: 135%;
 }
 
 .editor textarea,
 .preview {
-  padding: 20px;
+	padding: 20px;
 }
 
 .preview {
-  overflow-x: scroll;
+	overflow-x: auto;
+}
+
+@media only screen and (max-width: 768px) {
+	.content {
+		grid-template-columns: 100%;
+		min-height: 100vh;
+		overflow: hidden;
+	}
+
+	.editor {
+		min-height: 50vh;
+		max-height: 50vh;
+		border-right: none;
+		border-bottom: 1px solid #c2c2c2;
+	}
+
+	.preview {
+		overflow: auto;
+		min-height: 50vh;
+		max-height: 50vh;
+	}
 }
